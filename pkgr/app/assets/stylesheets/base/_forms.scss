@@ -1,6 +1,6 @@
 fieldset {
   background: lighten($base-border-color, 10);
-  border: 1px solid $base-border-color;
+  // border: 1px solid $base-border-color;
   margin: 0 0 ($base-line-height / 2) 0;
   padding: $base-line-height;
 }
@@ -9,12 +9,12 @@ input,
 label,
 select {
   display: block;
-  font-family: $form-font-family;
+  // font-family: $form-font-family;
   font-size: $form-font-size;
 }
 
 label {
-  font-weight: bold;
+  // font-weight: bold;
   margin-bottom: $base-line-height / 4;
 
   &.required:after {
@@ -32,22 +32,22 @@ select[multiple=multiple] {
   @include box-sizing(border-box);
   @include transition(border-color);
   background-color: white;
-  border-radius: $form-border-radius;
-  border: 1px solid $form-border-color;
-  box-shadow: $form-box-shadow;
-  font-family: $form-font-family;
+  // border-radius: $form-border-radius;
+  // border: 1px solid $form-border-color;
+  // box-shadow: $form-box-shadow;
+  // font-family: $form-font-family;
   font-size: $form-font-size;
   margin-bottom: $base-line-height / 2;
   padding: ($base-line-height / 3) ($base-line-height / 3);
   width: 100%;
 
   &:hover {
-    border-color: $form-border-color-hover;
+    // border-color: $form-border-color-hover;
   }
 
   &:focus {
-    border-color: $form-border-color-focus;
-    box-shadow: $form-box-shadow-focus;
+    // border-color: $form-border-color-focus;
+    // box-shadow: $form-box-shadow-focus;
     outline: none;
   }
 }

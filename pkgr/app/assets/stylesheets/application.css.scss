@@ -67,3 +67,17 @@ code {
  ul {
  padding-bottom: 7px;
 }
+
+input[type="submit"] {
+  font-family: monospace;
+  color: $dark-gray;
+  background-color: $light-gray;
+  display: inline-block;
+  font-weight: normal;
+  border-radius: 0;
+
+  &:hover {
+    color: $light-gray;
+    background-color: $dark-gray;
+  }
+}

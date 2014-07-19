@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pkgr</title>
+  <title>PKG.CAT</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <div id="heading">
+      <p>PKG.CAT</p>
+    </div>
 
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
