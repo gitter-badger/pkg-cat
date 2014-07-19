@@ -75,9 +75,14 @@ input[type="submit"] {
   display: inline-block;
   font-weight: normal;
   border-radius: 0;
+  outline: none;
 
   &:hover {
     color: $light-gray;
     background-color: $dark-gray;
   }
+}
+
+input[type="text"] {
+  font-family: monospace;
 }
