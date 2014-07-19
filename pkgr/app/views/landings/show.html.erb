@@ -1,0 +1,54 @@
+<div class="container">
+  <div id="heading">
+    <p>PKG.CAT</p>
+  </div>
+
+  <div class="marker">
+    (BEGINS)
+  </div>
+
+  <div class="instruction" >
+    <p class="question">WHAT IS PKG.CAT?</p>
+    <p>PKG.CAT is an email application. It can be used to create packages of 
+    attachments, links, and content in context. These are made and shared 
+    through email.
+
+    <p class="question">WHY WOULD I MAKE A PACKAGE?</p>
+    <p>Presentations. Talks. Forums where supplemental materials
+    are being shared. </p>
+
+    <p class="question">HOW DO I MAKE A PACKAGE?</p>
+    <p>Send an email to <code>new@pkg.cat</code>. You will receive an email
+    confirmation with your retrieval address.<p>
+
+    <p class="question">AND <br>WHAT INFORMATION DO I INCLUDE?</p>
+    <p>The following fields are accepted:
+
+    <ul>
+      <% @keywords.each do |name, description| %>
+        <li><span class="keyword"><%= name %></span> <%= description %></li>
+      <% end %>
+    </ul>
+    The subject line of the incoming email will be the same when retrieved. 
+    Attachments included in the initial email will be included with every
+    request for a package.
+    An example incoming email:
+    </p>
+
+    <p class="question">WHAT HAPPENS TO THE EMAIL I SEND?</p>
+    <p>It is parsed and waits to be called.</p>
+
+    <p class="question">HOW DO I SHARE THE PACKAGE I CREATED?</p>
+    <p>Email the retrieval address in you confirmation email. It is available
+    immediately.</p>
+
+    <p class="question">WHAT DOES AN OUTGOING PACKAGE LOOK LIKE?</p>
+    <p>A lot like this page.</p>
+    
+    <p class="question">PRIVACY</p>
+    <p>PKG.CAT encrypts email address information.<br>All fields in a package
+    are optional.</p>
+  </div>
+
+  <div class="marker">(ENDS)</div>
+</div>

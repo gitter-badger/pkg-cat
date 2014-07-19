@@ -1,3 +1,6 @@
+@import "bourbon";
+@import "base/base";
+@import "neat";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,6 +13,58 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+body {
+  background-color: #E0E0E0;
+  margin-top: 40px;
+}
+
+hr {
+  top-border: 2px;
+}
+
+.container {
+  @include outer-container;
+  font-family: monospace;
+  color: $dark-gray;
+}
+
+h1, h2, h3, h4 {
+  font-family: monospace;
+}
+
+#packager-title {
+  margin: 0 auto;
+}
+
+code {
+  background-color: white;
+  // color: black;
+}
+
+.keyword {
+  background-color: $dark-gray;
+  color: $light-gray;
+}
+
+.last {
+  @include omega();
+}
+
+.question {
+  background-color: white;
+}
+
+.marker {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+ ul {
+ padding-bottom: 7px;
+}
