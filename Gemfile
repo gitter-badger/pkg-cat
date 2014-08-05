@@ -13,5 +13,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'normalize-rails'
 gem 'griddler-sendgrid'
+gem 'paperclip', '~> 4.1'
 
 gem 'rails_12factor', group: :production

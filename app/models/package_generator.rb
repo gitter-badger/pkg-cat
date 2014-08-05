@@ -15,7 +15,7 @@ class PackageGenerator
 
   private
 
-  def email_lines
+  def email_body_lines
     email_body.split("\n\n").reject(&:empty?)
   end
 

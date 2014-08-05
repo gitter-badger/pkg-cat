@@ -18,5 +18,6 @@ class EmailProcessor
   def generate_package
     package = PackageGenerator.new(@email).generate
     package.save
+    package.add(@email.attachments)
   end
 end
