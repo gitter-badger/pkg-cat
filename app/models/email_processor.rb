@@ -19,5 +19,10 @@ class EmailProcessor
     package = PackageGenerator.new(@email).generate
     package.save
     package.add(@email.attachments)
+    deliver_confirmation(package)
+  end
+
+  def deliver_confirmation(package)
+    OutboundMailer.confirmation(package).deliver
   end
 end

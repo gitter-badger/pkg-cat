@@ -1,0 +1,19 @@
+<div style="font-family: monospace;">
+  Your package was created succesfully!
+
+  To receive the package send any email to:
+  <h3><%= @package.id %>@pkg.cat</h3>
+
+  ------PACKAGE BELOW THIS LINE-----
+  <p class="question"><%= @package.author %></p>
+  <p><%= @package.bio %></p>
+
+  <%= link_to "twitter", "http://twitter.com/#{ @package.twitter }" %> | 
+  <%= link_to "github", "http://github.com/#{ @package.github }" %> | 
+  <%= link_to "blog", "#{ @package.blog }" %> | 
+
+  <p class="question">PACKAGE DESCRIPTION</p>
+  <p><%= @package.description %></p>
+
+  <%= render @links %>
+</div>
