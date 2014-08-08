@@ -7,4 +7,16 @@ class Package < ActiveRecord::Base
       attachments.create(file: email_attachment)
     end
   end
+
+  def twitter?
+    twitter.present?
+  end
+
+  def github?
+    github.present?
+  end
+
+  def blog?
+    blog.present?
+  end
 end

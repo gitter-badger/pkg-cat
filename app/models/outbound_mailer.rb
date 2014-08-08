@@ -6,8 +6,21 @@ class OutboundMailer < ActionMailer::Base
     @links = generate_links(package)
     add_attachments_to_email
 
-    mail(to: @package.email,
-         subject: "[PKG.CAT CONFIRMATION] #{@package.subject}")
+    mail(
+      to: @package.email,
+      subject: "[PKG.CAT CONFIRMATION] " + @package.subject
+    )
+  end
+
+  def package_request(email)
+    @package = Package.find(email.to.first[:token])
+    @links = generate_links(@package)
+    add_attachments_to_email
+
+    mail(
+      to: email.from[:email],
+      subject: @package.subject
+    )
   end
 
   private

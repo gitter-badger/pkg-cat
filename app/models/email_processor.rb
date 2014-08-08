@@ -6,6 +6,8 @@ class EmailProcessor
   def process
     if mail_to_new?
       generate_package
+    else
+      deliver_requested_package
     end
   end
 
@@ -24,5 +26,9 @@ class EmailProcessor
 
   def deliver_confirmation(package)
     OutboundMailer.confirmation(package).deliver
+  end
+
+  def deliver_requested_package
+    OutboundMailer.package_request(@email).deliver
   end
 end
