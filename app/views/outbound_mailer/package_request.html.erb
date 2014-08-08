@@ -1,4 +1,8 @@
 <div style="font-family: monospace;">
+  <% if @email.body.present?  %>
+    <div><%= @email.body %> </div>
+  <% end %>
+  
   <p><%= @package.author %></p>
   <p><%= @package.bio %></p>
 

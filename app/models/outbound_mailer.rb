@@ -15,11 +15,12 @@ class OutboundMailer < ActionMailer::Base
   def package_request(email)
     @package = Package.find(email.to.first[:token])
     @links = generate_links(@package)
+    @email = email
     add_attachments_to_email
 
     mail(
       to: email.from[:email],
-      subject: @package.subject
+      subject: @package.subject + " " + @email.subject
     )
   end
 
