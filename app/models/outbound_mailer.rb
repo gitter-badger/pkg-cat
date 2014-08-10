@@ -3,7 +3,7 @@ class OutboundMailer < ActionMailer::Base
 
   def confirmation(package)
     @package = package
-    @links = generate_links(package)
+    @links = package.links
     add_attachments_to_email
 
     mail(
@@ -14,7 +14,7 @@ class OutboundMailer < ActionMailer::Base
 
   def package_request(email)
     @package = Package.find(email.to.first[:token])
-    @links = generate_links(@package)
+    @links = package.links
     @email = email
     add_attachments_to_email
 

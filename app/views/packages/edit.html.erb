@@ -1,17 +1,63 @@
-Package XXX-XXX-XXX
-<form>
-  <p>subject: <input type="text" name="subject"></p>
-  <p>author: <input type="text" name="author"></p>
-  <p>bio: <input type="text" name="bio"></p>
-  <p>twitter: <input type="text" name="twitter"></p>
-  <p>github: <input type="text" name="github"></p>
-  <p>blog: <input type="text" name="blog"></p>
-  <p>description: <input type="text" name="description"></p>
-  <p>link: <input type="text" name="link"></p>
-  <p>attachments: <input type="text" name="attachments"></p>
+Edit Package <%= @package.id %>
+<%= form_for @package do |form| %>
+  <div>
+    <%= form.label :subject %>
+    <%= form.text_field :subject %>
+  </div>
+
+  <div>
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div>
+    <%= form.label :bio %>
+    <%= form.text_field :bio %>
+  </div>
+
+  <div>
+    <%= form.label :twitter %>
+    <%= form.text_field :twitter %>
+  </div>
+
+  <div>
+    <%= form.label :github %>
+    <%= form.text_field :github %>
+  </div>
+
+  <div>
+    <%= form.label :blog %>
+    <%= form.text_field :blog %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 3 %>
+  </div>
+
+  <div>
+    <%= form.label :links %>
+    <%= form.fields_for :links do |link_fields| %>
+      <%= render "link", link_fields: link_fields %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.fields_for :attachments do |attachment_fields| %>
+      <%= form_fields.label :file_file_name, "Attachment" %>
+      <%= form_fields.text_field :file_file_name %>
+      <%= button_to :delete %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :file, "Add a file [Max 25MB Total]" %>
+    <%= form.file_field :file %>
+  </div>
+
   <div>
     <input type="submit", value="EMAIL PREVIEW">
-    <input type="submit", value="UPDATE PACKAGE">
+    <%= form.submit "UPDATE PACKAGE" %>
     <input type="submit", value="CANCEL">
   </div>
-</form>
+<% end %>

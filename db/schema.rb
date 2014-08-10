@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805200519) do
+ActiveRecord::Schema.define(version: 20140810015039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20140805200519) do
   end
 
   add_index "attachments", ["package_id"], name: "index_attachments_on_package_id", using: :btree
+
+  create_table "links", force: true do |t|
+    t.string  "name",       default: "", null: false
+    t.text    "url",                     null: false
+    t.integer "package_id",              null: false
+  end
+
+  add_index "links", ["package_id"], name: "index_links_on_package_id", using: :btree
 
   create_table "packages", force: true do |t|
     t.string   "subject",     default: "", null: false
