@@ -2,7 +2,9 @@ class Package < ActiveRecord::Base
   validates :email, presence: true
   has_many :attachments, dependent: :destroy
   has_many :links, dependent: :destroy
-  accepts_nested_attributes_for :links, reject_if: lambda { |link| link[:url].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :links,
+    reject_if: lambda { |link| link[:url].blank? },
+    allow_destroy: true
   accepts_nested_attributes_for :attachments, allow_destroy: true
 
   def update_attachments(email_attachments)
