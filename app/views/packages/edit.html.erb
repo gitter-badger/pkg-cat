@@ -44,8 +44,8 @@ Edit Package <%= @package.id %>
 
   <div>
     <%= form.fields_for :attachments do |attachment_fields| %>
-      <%= form_fields.label :file_file_name, "Attachment" %>
-      <%= form_fields.text_field :file_file_name %>
+      <%= attachment_fields.label :file_file_name, "Attachment" %>
+      <%= attachment_fields.text_field :file_file_name %>
       <%= button_to :delete %>
     <% end %>
   </div>

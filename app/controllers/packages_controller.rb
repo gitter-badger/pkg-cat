@@ -24,7 +24,8 @@ class PackagesController < ApplicationController
       links_attributes: [
          :id,
          :name,
-         :url
+         :url,
+         :_destroy
       ]
     )
   end

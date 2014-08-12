@@ -26,10 +26,6 @@ class OutboundMailer < ActionMailer::Base
 
   private
 
-  def generate_links(package)
-    LinkGenerator.new(package).generate
-  end
-
   def add_attachments_to_email
     @package.attachments.each do |attachment|
       attachments[attachment.file_file_name.to_s] = File.read(attachment.file.path.to_s)
