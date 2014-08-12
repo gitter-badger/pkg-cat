@@ -27,10 +27,15 @@ class PackagesController < ApplicationController
       :blog,
       :description,
       links_attributes: [
-         :id,
-         :name,
-         :url,
-         :_destroy
+        :id,
+        :name,
+        :url,
+        :_destroy
+      ],
+      attachments_attributes: [
+        :id,
+        :file_file_name,
+        :_destroy
       ]
     )
   end
