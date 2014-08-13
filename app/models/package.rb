@@ -5,7 +5,9 @@ class Package < ActiveRecord::Base
   accepts_nested_attributes_for :links,
     reject_if: lambda { |link| link[:url].blank? },
     allow_destroy: true
-  accepts_nested_attributes_for :attachments, allow_destroy: true
+  accepts_nested_attributes_for :attachments,
+    reject_if: lambda { |attachment| attachment[:file].blank? },
+    allow_destroy: true
 
   def update_attachments(email_attachments)
     email_attachments.each do |email_attachment|
@@ -16,6 +18,12 @@ class Package < ActiveRecord::Base
   def update_links(email_links)
     email_links.each do |name, url|
       links.create(name: name, url: url)
+    end
+  end
+
+  def attach(file_params)
+    if file_params.present?
+      attachments.create(file: file_params)
     end
   end
 

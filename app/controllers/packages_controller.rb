@@ -11,6 +11,7 @@ class PackagesController < ApplicationController
   def update
     package = Package.find(params[:id])
     package.update(package_params)
+    package.attach(params[:package][:file])
 
     redirect_to [:edit, package]
   end
