@@ -1,7 +1,11 @@
 class EmailAdapter
   def initialize(email)
     @email = email
-    @data = { email: email.from[:email], subject: email.subject }
+    @data = {
+      email: email.from[:email],
+      subject: email.subject,
+      token: SecureRandom.urlsafe_base64(128)
+    }
     @links = {}
     process_email_body
   end
@@ -9,7 +13,7 @@ class EmailAdapter
   attr_reader :data, :links
 
   def process_email_body
-    @email.body_lines.each do |line|
+    email_body_lines.each do |line|
       key, value = line.strip.split(">")
       add_to_data_or_links(key, value)
     end

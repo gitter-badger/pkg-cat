@@ -27,6 +27,10 @@ class Package < ActiveRecord::Base
     end
   end
 
+  def to_param
+    token
+  end
+
   def twitter?
     twitter.present?
   end
