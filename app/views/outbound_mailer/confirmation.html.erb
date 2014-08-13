@@ -3,7 +3,7 @@
 
   <p><%= link_to "Click here to edit this package", edit_package_url(@package) %></p>
 
-  <h3>To receive the package send any email to: <%= @package.id %>@pkg.cat</h3>
+  <h3>To receive the package send any email to: <%= @package.slug %>@pkg.cat</h3>
 
   ------PACKAGE BELOW THIS LINE-----
   <p><%= @package.author %></p>

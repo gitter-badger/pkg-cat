@@ -26,7 +26,9 @@ class EmailAdapter
     if clean_key == :link
       name, url = clean_value.strip.split("|")
       @links[name.strip] = url.strip
-    else
+    elsif clean_key == :slug
+      @data[:slug] = clean_value.parameterize
+    elsif
       @data[clean_key] = clean_value
     end
   end

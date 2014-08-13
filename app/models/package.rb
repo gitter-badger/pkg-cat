@@ -9,6 +9,8 @@ class Package < ActiveRecord::Base
     reject_if: lambda { |attachment| attachment[:file].blank? },
     allow_destroy: true
 
+  before_create :verify_unique_slug
+
   def update_attachments(email_attachments)
     email_attachments.each do |email_attachment|
       attachments.create(file: email_attachment)
@@ -41,5 +43,13 @@ class Package < ActiveRecord::Base
 
   def blog?
     blog.present?
+  end
+
+  private
+
+  def verify_unique_slug
+    if slug.nil? || Package.exists?(slug: slug)
+      self.slug = SecureRandom.hex(3)
+    end
   end
 end
