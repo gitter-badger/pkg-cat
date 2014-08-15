@@ -9,8 +9,11 @@ class PackagesController < ApplicationController
   end
 
   def update
-    package = Package.find(params[:id])
+    package = Package.find_by!(token: token)
     package.update(package_params)
+    if package.slug != proposed_slug
+      flash[:alert] = "#{proposed_slug} is taken. Please try again"
+    end
     package.attach(params[:package][:file])
 
     redirect_to [:edit, package]
@@ -20,6 +23,7 @@ class PackagesController < ApplicationController
 
   def package_params
     params.require(:package).permit(
+      :slug,
       :subject,
       :author,
       :bio,
@@ -47,5 +51,9 @@ class PackagesController < ApplicationController
 
   def token
     params[:id]
+  end
+
+  def proposed_slug
+    params[:package][:slug].parameterize
   end
 end

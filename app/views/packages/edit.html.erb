@@ -1,6 +1,11 @@
 Edit Package <%= @package.id %>
 <%= form_for @package do |form| %>
   <div>
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div>
     <%= form.label :subject %>
     <%= form.text_field :subject %>
   </div>

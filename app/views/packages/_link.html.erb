@@ -1,5 +1,7 @@
 <fieldset>
+  <%= link_fields.label :name, "Display Name" %>
   <%= link_fields.text_field :name %>
+  <%= link_fields.label :url %>
   <%= link_fields.url_field :url %>
   <%= link_fields.hidden_field :_destroy %>
   <%= link_to "Delete Link", "#", class: "remove_links" %>

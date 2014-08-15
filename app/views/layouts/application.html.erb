@@ -12,6 +12,14 @@
       <p>PKG.CAT</p>
     </div>
 
+    <% if flash.any? %>
+      <div id="flash">
+        <% flash.each do |key, value| -%>
+          <div id="flash_<%= key %>"><%= value %></div>
+        <% end -%>
+      </div>
+    <% end %>
+
     <%= yield %>
   </div>
 </body>

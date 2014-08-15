@@ -86,3 +86,7 @@ input[type="submit"] {
 input[type="text"] {
   font-family: monospace;
 }
+
+#flash_alert {
+  @extend %flash-alert;
+}

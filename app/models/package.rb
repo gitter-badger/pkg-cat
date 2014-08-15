@@ -45,10 +45,20 @@ class Package < ActiveRecord::Base
     blog.present?
   end
 
+  def slug=(proposed_slug)
+    if slug != proposed_slug && Package.exists?(slug: proposed_slug)
+      self[:slug] = slug
+    elsif proposed_slug.empty?
+      self[:slug] = SecureRandom.hex(3)
+    else
+      self[:slug] = proposed_slug.parameterize
+    end
+  end
+
   private
 
   def verify_unique_slug
-    if slug.nil? || Package.exists?(slug: slug)
+    if slug.empty? || Package.exists?(slug: slug)
       self.slug = SecureRandom.hex(3)
     end
   end
