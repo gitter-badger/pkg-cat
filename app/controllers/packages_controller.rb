@@ -1,6 +1,26 @@
 class PackagesController < ApplicationController
   MAX_AMOUNT_OF_LINKS = 5
 
+  def new
+    @package = Package.new
+    number_of_links_left.times do
+      @package.links.build
+    end
+  end
+
+  def create
+    @package = Package.new(package_params)
+    @package.token = SecureRandom.urlsafe_base64(64)
+
+    if @package.save
+      @package.attach(params[:package][:file])
+      flash[:success] = "Package Created Successfully!"
+      redirect_to [:edit, @package]
+    else
+      render :new
+    end
+  end
+
   def edit
     @package = Package.find_by!(token: token)
     number_of_links_left.times do
@@ -23,6 +43,7 @@ class PackagesController < ApplicationController
 
   def package_params
     params.require(:package).permit(
+      :email,
       :slug,
       :subject,
       :author,

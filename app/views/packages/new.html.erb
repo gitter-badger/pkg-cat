@@ -1,0 +1,15 @@
+<%= form_for @package do |form| %>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+    <p>An email confirmation and edit link will be sent to this address. There will not be a chance to edit this address after creating your package.</p>
+  </div>
+
+  <%= render "form", form: form %>
+
+  <div>
+    <input type="submit", value="EMAIL PREVIEW">
+    <%= form.submit "CREATE PACKAGE" %>
+    <input type="submit", value="CANCEL">
+  </div>
+<% end %>
