@@ -14,6 +14,7 @@ class PackagesController < ApplicationController
 
     if @package.save
       @package.attach(params[:package][:file])
+      OutboundMailer.confirmation(@package).deliver
       flash[:success] = "Package Created Successfully!"
       redirect_to [:edit, @package]
     else
