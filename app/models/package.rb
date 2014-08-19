@@ -58,7 +58,7 @@ class Package < ActiveRecord::Base
   private
 
   def verify_unique_slug
-    if slug.empty? || Package.exists?(slug: slug)
+    if slug.blank? || Package.exists?(slug: slug)
       self.slug = SecureRandom.hex(3)
     end
   end

@@ -1,40 +1,65 @@
 <div>
   <%= form.label :slug %>
+  <p class="form-description">
+    The highlighted token: <code>your-package-slug</code>@pkg.cat.<br>
+    All letters will be downcase. Spaces and special characters will become hyphens.
+  </p>
   <%= form.text_field :slug %>
 </div>
 
 <div>
   <%= form.label :subject %>
+  <p class="form-description">
+    Subject line of outgoing email
+  </p>
   <%= form.text_field :subject %>
 </div>
 
 <div>
   <%= form.label :author %>
+  <p class="form-description">
+    Your name
+  </p>
   <%= form.text_field :author %>
 </div>
 
 <div>
   <%= form.label :bio %>
-  <%= form.text_field :bio %>
+  <p class="form-description">
+    Context in which you exist
+  </p>
+  <%= form.text_area :bio %>
 </div>
 
 <div>
   <%= form.label :twitter %>
+  <p class="form-description">
+    Twitter handle
+  </p>
   <%= form.text_field :twitter %>
 </div>
 
 <div>
   <%= form.label :github %>
+  <p class="form-description">
+    Github username
+  </p>
   <%= form.text_field :github %>
 </div>
 
 <div>
   <%= form.label :blog %>
+  <p class="form-description">
+    http://yourblog.com
+  </p>
   <%= form.text_field :blog %>
 </div>
 
 <div>
   <%= form.label :description %>
+  <p class="form-description">
+    Context in which this package exists. Should answer the question "What is this?"
+  </p>
   <%= form.text_area :description, rows: 3 %>
 </div>
 

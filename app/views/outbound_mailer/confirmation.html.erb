@@ -1,28 +1,33 @@
-<div style="font-family: monospace;">
-  <p>Your package was created successfully!</p>
+<div style="font-family: monospace;font-size: 16px;">
+  <p style="background-color: #FBEA74">PACKAGE CREATED SUCCESSFULLY</p>
+
+  <p>To receive the package send any email to: <span style="background-color: #FBEA74"><%= @package.slug %>@pkg.cat</span></p>
 
   <p><%= link_to "Click here to edit this package", edit_package_url(@package) %></p>
 
-  <h3>To receive the package send any email to: <%= @package.slug %>@pkg.cat</h3>
-
   ------PACKAGE BELOW THIS LINE-----
-  <p><%= @package.author %></p>
-  <p><%= @package.bio %></p>
+  <div style="font-family: monospace;font-size: 16px;">
+    <div>
+      <p style="background-color: #E0E0E0;">WHO AM I?</p>
+      <p><%= @package.author %></p>
+      <p><%= @package.bio %></p>
 
-  <% if @package.twitter? %>
-    <%= link_to "twitter", "http://twitter.com/#{@package.twitter}" %> | 
-  <% end %>
+      <% if @package.twitter? %>
+        <%= link_to "twitter", "http://twitter.com/#{@package.twitter}" %>
+      <% end %>
 
-  <% if @package.github? %>
-    <%= link_to "github", "http://github.com/#{@package.github}" %> | 
-  <% end %>
+      <% if @package.github? %>
+        | <%= link_to "github", "http://github.com/#{@package.github}" %>
+      <% end %>
 
-  <% if @package.blog? %>
-    <%= link_to "blog", @package.blog %>
-  <% end %>
+      <% if @package.blog? %>
+        | <%= link_to "blog", @package.blog %>
+      <% end %>
+    </div>
 
-  <p>PACKAGE DESCRIPTION</p>
-  <p><%= @package.description %></p>
+    <p style="background-color: #E0E0E0;">WHAT IS THIS?</p>
+    <p><%= @package.description %></p>
 
-  <%= render @links %>
+    <%= render @links %>
+  </div>
 </div>

@@ -1,24 +1,30 @@
-<div style="font-family: monospace;">
+<div style="font-family: monospace;font-size: 16px;">
   <% if @email.body.present?  %>
-    <div><%= @email.body %> </div>
-  <% end %>
-  
-  <p><%= @package.author %></p>
-  <p><%= @package.bio %></p>
-
-  <% if @package.twitter? %>
-    <%= link_to "twitter", "http://twitter.com/#{@package.twitter}" %> | 
+    <div>
+    <p style="background-color: #E0E0E0;">YOUR NOTES:</p>
+    <p><%= @email.body %></p>
+    </div>
   <% end %>
 
-  <% if @package.github? %>
-    <%= link_to "github", "http://github.com/#{@package.github}" %> | 
-  <% end %>
+  <div>
+    <p style="background-color: #E0E0E0;">WHO AM I?</p>
+    <p><%= @package.author %></p>
+    <p><%= @package.bio %></p>
 
-  <% if @package.blog? %>
-    <%= link_to "blog", @package.blog %>
-  <% end %>
+    <% if @package.twitter? %>
+      <%= link_to "twitter", "http://twitter.com/#{@package.twitter}" %>
+    <% end %>
 
-  <p>PACKAGE DESCRIPTION</p>
+    <% if @package.github? %>
+      | <%= link_to "github", "http://github.com/#{@package.github}" %>
+    <% end %>
+
+    <% if @package.blog? %>
+      | <%= link_to "blog", @package.blog %>
+    <% end %>
+  </div>
+
+  <p style="background-color: #E0E0E0;">WHAT IS THIS?</p>
   <p><%= @package.description %></p>
 
   <%= render @links %>

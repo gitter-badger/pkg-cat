@@ -22,6 +22,7 @@ div {
 
 body {
   background-color: #E0E0E0;
+  font-size: 16px;
 }
 
 hr {
@@ -64,8 +65,16 @@ code {
   margin-top: 30px;
   margin-bottom: 30px;
 }
- ul {
+
+ul {
  padding-bottom: 7px;
+}
+
+label {
+  font-family: monospace;
+  color: $dark-gray;
+  display: inline-block;
+  font-weight: normal;
 }
 
 input[type="submit"] {
@@ -83,7 +92,7 @@ input[type="submit"] {
   }
 }
 
-input[type="text"] {
+input[type="text"], input[type="url"], input[type="file"], textarea  {
   font-family: monospace;
 }
 
@@ -93,4 +102,9 @@ input[type="text"] {
 
 #flash_success {
   @extend %flash-success;
+}
+
+.form-description {
+  font-style: italic;
+  font-size: 12px;
 }

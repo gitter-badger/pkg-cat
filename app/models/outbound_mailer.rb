@@ -13,7 +13,7 @@ class OutboundMailer < ActionMailer::Base
   end
 
   def package_request(email)
-    @package = Package.find_by!(name: email.to.first[:token])
+    @package = Package.find_by!(slug: email.to.first[:token])
     @links = @package.links
     @email = email
     add_attachments_to_email
