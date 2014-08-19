@@ -40,6 +40,13 @@ class PackagesController < ApplicationController
     redirect_to [:edit, package]
   end
 
+  def destroy
+    package = Package.find_by!(token: token)
+    package.destroy
+    flash[:success] = "Package destroyed successfully."
+    redirect_to root_path
+  end
+
   private
 
   def package_params

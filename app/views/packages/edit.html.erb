@@ -4,6 +4,6 @@ Edit Package <%= @package.id %>
 
   <div>
     <%= form.submit "UPDATE PACKAGE" %>
-    <input type="submit", value="CANCEL">
+    <%= button_to "DELETE PACKAGE", @package, method: :delete %>
   </div>
 <% end %>
