@@ -30,7 +30,7 @@ class Package < ActiveRecord::Base
   end
 
   def to_param
-    token
+    private_token
   end
 
   def twitter?

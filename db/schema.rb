@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140813224830) do
+ActiveRecord::Schema.define(version: 20140819210144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,19 +35,19 @@ ActiveRecord::Schema.define(version: 20140813224830) do
   add_index "links", ["package_id"], name: "index_links_on_package_id", using: :btree
 
   create_table "packages", force: true do |t|
-    t.string   "subject",     default: "", null: false
-    t.string   "email",                    null: false
-    t.string   "author",      default: "", null: false
-    t.text     "bio",         default: "", null: false
-    t.string   "twitter",     default: "", null: false
-    t.string   "github",      default: "", null: false
-    t.string   "blog",        default: "", null: false
-    t.text     "description", default: "", null: false
-    t.string   "links",       default: [], null: false, array: true
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "token",                    null: false
-    t.string   "slug",                     null: false
+    t.string   "subject",       default: "", null: false
+    t.string   "email",                      null: false
+    t.string   "author",        default: "", null: false
+    t.text     "bio",           default: "", null: false
+    t.string   "twitter",       default: "", null: false
+    t.string   "github",        default: "", null: false
+    t.string   "blog",          default: "", null: false
+    t.text     "description",   default: "", null: false
+    t.string   "links",         default: [], null: false, array: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "private_token",              null: false
+    t.string   "slug",                       null: false
   end
 
   add_index "packages", ["slug"], name: "index_packages_on_slug", unique: true, using: :btree

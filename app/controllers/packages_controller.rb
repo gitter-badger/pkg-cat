@@ -10,7 +10,7 @@ class PackagesController < ApplicationController
 
   def create
     @package = Package.new(package_params)
-    @package.token = SecureRandom.urlsafe_base64(64)
+    @package.private_token = SecureRandom.urlsafe_base64(64)
 
     if @package.save
       @package.attach(params[:package][:file])
@@ -23,14 +23,14 @@ class PackagesController < ApplicationController
   end
 
   def edit
-    @package = Package.find_by!(token: token)
+    @package = Package.find_by!(private_token: private_token)
     number_of_links_left.times do
       @package.links.build
     end
   end
 
   def update
-    package = Package.find_by!(token: token)
+    package = Package.find_by!(private_token: private_token)
     package.update(package_params)
     if package.slug != proposed_slug
       flash[:alert] = "#{proposed_slug} is taken. Please try again"
@@ -41,7 +41,7 @@ class PackagesController < ApplicationController
   end
 
   def destroy
-    package = Package.find_by!(token: token)
+    package = Package.find_by!(private_token: private_token)
     package.destroy
     flash[:success] = "Package destroyed successfully."
     redirect_to root_path
@@ -78,7 +78,7 @@ class PackagesController < ApplicationController
     MAX_AMOUNT_OF_LINKS - @package.links.count
   end
 
-  def token
+  def private_token
     params[:id]
   end
 

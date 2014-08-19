@@ -4,7 +4,7 @@ class EmailAdapter
     @data = {
       email: email.from[:email],
       subject: email.subject,
-      token: SecureRandom.urlsafe_base64(64)
+      private_token: SecureRandom.urlsafe_base64(64)
     }
     @links = {}
     process_email_body
