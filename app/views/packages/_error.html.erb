@@ -1,0 +1,7 @@
+<% if package.errors.any? %>
+   <ul id="flash_alert">
+    <% package.errors.full_messages.each do |error_message| %>
+       <li><%= error_message %></li>
+    <% end %>
+   </ul>
+<% end %>

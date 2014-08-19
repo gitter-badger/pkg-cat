@@ -1,4 +1,6 @@
 <%= form_for @package do |form| %>
+  <%= render "error", package: @package %>
+
   <div>
     <%= form.label :email %>
     <p class="form-description">
