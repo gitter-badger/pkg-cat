@@ -1,6 +1,4 @@
 class OutboundMailer < ActionMailer::Base
-  default from: "info@gmayorga.bymail.in"
-
   def confirmation(package)
     @package = package
     @links = package.links
@@ -8,6 +6,7 @@ class OutboundMailer < ActionMailer::Base
 
     mail(
       to: @package.email,
+      from: "new@pkg.cat",
       subject: "[PKG.CAT CONFIRMATION] " + @package.subject
     )
   end
@@ -20,6 +19,7 @@ class OutboundMailer < ActionMailer::Base
 
     mail(
       to: email.from[:email],
+      from: email.to.first[:email],
       subject: @package.subject + " " + @email.subject
     )
   end
