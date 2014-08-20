@@ -28,7 +28,7 @@ class OutboundMailer < ActionMailer::Base
 
   def add_attachments_to_email
     @package.attachments.each do |attachment|
-      attachments[attachment.file_file_name.to_s] = File.read(attachment.file.path.to_s)
+      attachments[attachment.file_file_name.to_s] = open(attachment.file.url).read
     end
   end
 end
