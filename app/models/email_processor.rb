@@ -14,7 +14,7 @@ class EmailProcessor
   private
 
   def mail_to_new?
-    @email.to.first[:token] == "new"
+    @email.to.first[:token].parameterize == "new"
   end
 
   def generate_package
