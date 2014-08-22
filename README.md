@@ -8,9 +8,13 @@ their bundle by sharing their packages unique email address (i.e.
 
 See directions and try it out for yourself here at
 [PKG.CAT](http://www.pkg.cat)!
+<img src="https://raw.githubusercontent.com/georgetmayorga/pkg-cat/gm-image/app/assets/images/landing-page.png"
+width="500">
 
 *Built using Rails, Coffeescript, Heroku, Paperclip, AWS S3, SendGrid, Griddler, Bourbon,
 Neat*
+
+Here are some of the interesting product design features of PKG.CAT:
 
 ##Users: No sign up, no sign in
 I wanted people to use the app without adding to their username and
