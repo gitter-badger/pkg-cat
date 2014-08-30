@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'normalize-rails'
 gem 'griddler-sendgrid'
 gem 'paperclip', '~> 4.1'
+gem 'unicorn'
 
 group :development do
   gem 'dotenv-rails'
