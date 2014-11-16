@@ -30,7 +30,7 @@ class EmailProcessor
     deliver_package_request(@inbound_email)
   end
 
-  def deliver_package_request(recipient, package)
-    RequestPackageMailer.package_request(email).deliver
+  def deliver_package_request(email)
+    RequestPackageMailer.package(email).deliver
   end
 end
