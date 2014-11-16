@@ -1,4 +1,4 @@
-class OutboundMailer < ActionMailer::Base
+class RequestPackageMailer < ActionMailer::Base
   def package_request(email)
     @package = Package.find_by!(slug: email.to.first[:token].parameterize)
     @links = @package.links
