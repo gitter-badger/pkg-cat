@@ -1,4 +1,6 @@
 #PKG.CAT
+
+[![Join the chat at https://gitter.im/georgetmayorga/pkg-cat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/georgetmayorga/pkg-cat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 PKG.CAT is an app that lets people bundle together a collection of links,
 attachments, and information about themselves to share. A great use case would
 be a speaker at a conference who wants to bundle their slides, some articles,
